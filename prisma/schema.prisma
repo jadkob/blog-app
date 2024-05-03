@@ -9,19 +9,19 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "cockroachdb"
   url      = env("DATABASE_URL")
 }
 model User {
-  id Int @id @default(autoincrement())
+  id Int @id @default(sequence())
   username String
   password String
   createdAt DateTime @default(now())
 }
 model Blog {
-  id Int @id @default(autoincrement())
+  id Int @id @default(sequence())
   username String
-  title String @db.MediumText
-  text String @db.LongText
+  title String 
+  text String
   createdAt DateTime @default(now())
 }
