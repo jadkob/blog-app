@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <>
       <Nav />
-      {error && <h1>{error}</h1>}
+      {error && <h1 className="text-center text-[1.6rem]">{error}</h1>}
       {loading && <Loading />}
       <div>
         {blogs.map((blog) => (
