@@ -17,7 +17,7 @@ export async function GET(req: Request) {
       },
     });
     if (blogs.length == 0)
-      return new Response("You havent posted anytinh yet", { status: 404 });
+      return new Response("You havent posted anything yet", { status: 404 });
     return Response.json(blogs);
   } catch (error: any) {
     return new Response(error.message, { status: 500 });
